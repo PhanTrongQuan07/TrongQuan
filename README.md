@@ -1,1 +1,387 @@
-# TrongQuan
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>Giới thiệu bản thân</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial;
+}
+
+body{
+    overflow:hidden;
+    background:#000;
+}
+
+/* ===== LOADING SCREEN ===== */
+#loading{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:black;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:9999;
+    color:cyan;
+    font-size:20px;
+    letter-spacing:3px;
+}
+
+.loader{
+    width:60px;
+    height:60px;
+    border:4px solid #222;
+    border-top:4px solid cyan;
+    border-radius:50%;
+    animation:spinLoad 1s linear infinite;
+    margin-right:15px;
+}
+
+@keyframes spinLoad{
+    0%{transform:rotate(0deg);}
+    100%{transform:rotate(360deg);}
+}
+
+/* nền */
+canvas{
+    position:absolute;
+    top:0;
+    left:0;
+    z-index:0;
+}
+
+/* container */
+.container{
+    position:relative;
+    z-index:2;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+/* card */
+.card{
+    width:340px;
+    padding:25px;
+    border-radius:20px;
+    background:rgba(255,255,255,0.08);
+    backdrop-filter:blur(15px);
+    box-shadow:0 0 30px cyan;
+    text-align:center;
+    color:white;
+    animation:float 4s infinite ease-in-out;
+}
+
+@keyframes float{
+    0%,100%{transform:translateY(0);}
+    50%{transform:translateY(-12px);}
+}
+
+/* avatar */
+.avatar{
+    width:120px;
+    height:120px;
+    margin:auto;
+    border-radius:50%;
+    border:3px solid cyan;
+    overflow:hidden;
+    animation:spin 6s linear infinite;
+    box-shadow:0 0 20px cyan;
+}
+
+.avatar img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+@keyframes spin{
+    0%{transform:rotateY(0);}
+    100%{transform:rotateY(360deg);}
+}
+
+/* neon text */
+.neon{
+    font-size:20px;
+    margin-top:10px;
+    color:white;
+}
+
+/* social buttons */
+.social{
+    margin-top:15px;
+    display:flex;
+    justify-content:center;
+    gap:10px;
+}
+
+.social a{
+    text-decoration:none;
+    padding:8px 12px;
+    border-radius:20px;
+    color:black;
+    font-weight:bold;
+    background:cyan;
+    transition:0.3s;
+}
+
+.social a:hover{
+    transform:scale(1.1);
+    box-shadow:0 0 15px cyan;
+}
+
+/* button liên hệ */
+.btn{
+    margin-top:15px;
+    display:inline-block;
+    padding:10px 20px;
+    border-radius:30px;
+    background:cyan;
+    color:#000;
+    font-weight:bold;
+    text-decoration:none;
+    transition:0.3s;
+}
+
+.btn:hover{
+    box-shadow:0 0 20px cyan;
+    transform:scale(1.1);
+}
+
+/* skills section */
+.skills-modal{
+    display:none;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.8);
+    z-index:3000;
+    justify-content:center;
+    align-items:center;
+}
+
+.skills-modal.active{
+    display:flex;
+}
+
+.skills-content{
+    background:rgba(30,30,50,0.95);
+    backdrop-filter:blur(15px);
+    border-radius:20px;
+    padding:30px;
+    width:80%;
+    max-width:500px;
+    border:2px solid cyan;
+    box-shadow:0 0 30px cyan;
+    color:white;
+}
+
+.skills-content h3{
+    color:cyan;
+    margin-bottom:20px;
+    text-shadow:0 0 10px cyan;
+}
+
+.skill-item{
+    margin-bottom:15px;
+}
+
+.skill-name{
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:5px;
+    font-weight:bold;
+}
+
+.skill-bar{
+    background:rgba(255,255,255,0.1);
+    border-radius:10px;
+    height:10px;
+    overflow:hidden;
+}
+
+.skill-progress{
+    background:linear-gradient(90deg, #00ffff, #0088ff);
+    height:100%;
+    border-radius:10px;
+    transition:width 0.3s;
+}
+
+.close-skills{
+    position:absolute;
+    top:20px;
+    right:30px;
+    color:cyan;
+    font-size:28px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+.close-skills:hover{
+    text-shadow:0 0 10px cyan;
+}
+</style>
+</head>
+
+<body>
+
+<!-- LOADING -->
+<div id="loading">
+    <div class="loader"></div>
+    Đang tải...
+</div>
+
+<canvas id="bg"></canvas>
+
+<div class="container">
+    <div class="card">
+
+        <div class="avatar">
+            <img src="c:\Users\ASUS\OneDrive\Pictures\z7810449190518_f08679bce01e30ab05ecf8118777800e (2).jpg">
+        </div>
+
+        <h2>𝑷𝒉𝒂𝒏 𝑻𝒓𝒐̣𝒏𝒈 𝑸𝒖𝒂̂𝒏</h2>
+
+        <div class="neon">🍀 Quân Mầm Non 🍀</div>
+
+        <p style="margin-top:10px;">𝑿𝒊𝒏 𝑪𝒉𝒂̀𝒐 𝑨𝒏𝒉 𝑬𝒎
+!</p>
+
+        <!-- SOCIAL -->
+        <div class="social">
+            <a href="https://www.facebook.com/share/1LEmSJ1jCX/?mibextid=wwXIfr" target="_blank">👍 Facebook</a>
+            <a href="https://www.tiktok.com/@quanmamnon?_r=1&_t=ZS-96DopVgNv1g" target="_blank">🎵 TikTok</a>
+            <a href="https://www.instagram.com/trongquan1107?igsh=MXh4d2o4b241NHpmcw%3D%3D&utm_source=qr" target="_blank">📸 Instagram</a>
+        </div>
+
+        <a class="btn" href="javascript:openSkills()">Kỹ Năng</a>
+    </div>
+</div>
+
+<!-- SKILLS MODAL -->
+<div class="skills-modal" id="skillsModal">
+    <span class="close-skills" onclick="closeSkills()">&times;</span>
+    <div class="skills-content">
+        <h3>Kỹ Năng Của Tôi</h3>
+        
+        <div class="skill-item">
+            <div class="skill-name">
+                <span>HTML</span>
+                <span>12%</span>
+            </div>
+            <div class="skill-bar">
+                <div class="skill-progress" style="width:12%"></div>
+            </div>
+        </div>
+
+        <div class="skill-item">
+            <div class="skill-name">
+                <span>CSS</span>
+                <span>15%</span>
+            </div>
+            <div class="skill-bar">
+                <div class="skill-progress" style="width:15%"></div>
+            </div>
+        </div>
+
+        <div class="skill-item">
+            <div class="skill-name">
+                <span>JavaScript</span>
+                <span>8%</span>
+            </div>
+            <div class="skill-bar">
+                <div class="skill-progress" style="width:8%"></div>
+            </div>
+        </div>
+
+        <div class="skill-item">
+            <div class="skill-name">
+                <span>Thiết Kế Web</span>
+                <span>11%</span>
+            </div>
+            <div class="skill-bar">
+                <div class="skill-progress" style="width:11%"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+// ===== skills modal =====
+function openSkills(){
+    document.getElementById("skillsModal").classList.add("active");
+}
+
+function closeSkills(){
+    document.getElementById("skillsModal").classList.remove("active");
+}
+
+window.onclick = function(event){
+    const modal = document.getElementById("skillsModal");
+    if(event.target == modal){
+        modal.classList.remove("active");
+    }
+}
+
+// ===== loading =====
+window.onload = function(){
+    setTimeout(()=>{
+        document.getElementById("loading").style.display="none";
+    },1500);
+}
+
+// ===== background stars =====
+const canvas = document.getElementById("bg");
+const ctx = canvas.getContext("2d");
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+let stars = [];
+
+for(let i=0;i<120;i++){
+    stars.push({
+        x:Math.random()*canvas.width,
+        y:Math.random()*canvas.height,
+        r:Math.random()*2,
+        dx:(Math.random()-0.5)*0.6,
+        dy:(Math.random()-0.5)*0.6
+    });
+}
+
+function draw(){
+    ctx.fillStyle="black";
+    ctx.fillRect(0,0,canvas.width,canvas.height);
+
+    ctx.fillStyle="cyan";
+
+    stars.forEach(s=>{
+        ctx.beginPath();
+        ctx.arc(s.x,s.y,s.r,0,Math.PI*2);
+        ctx.fill();
+
+        s.x+=s.dx;
+        s.y+=s.dy;
+
+        if(s.x<0||s.x>canvas.width)s.dx*=-1;
+        if(s.y<0||s.y>canvas.height)s.dy*=-1;
+    });
+
+    requestAnimationFrame(draw);
+}
+
+draw();
+</script>
+
+</body>
+</html>
