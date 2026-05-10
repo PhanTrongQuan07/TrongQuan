@@ -2,7 +2,7 @@
 <html lang="vi">
 <head>
 <meta charset="UTF-8">
-<title>Giới thiệu bản thân</title>
+<title>TrongQuan Alpha</title>
 
 <style>
 *{
@@ -230,6 +230,494 @@ canvas{
 .close-skills:hover{
     text-shadow:0 0 10px cyan;
 }
+
+/* search box */
+.search-box{
+    margin-bottom:20px;
+}
+
+.search-box input{
+    width:100%;
+    padding:12px;
+    border:1px solid cyan;
+    border-radius:10px;
+    background:rgba(0,255,255,0.1);
+    color:white;
+    font-size:14px;
+    outline:none;
+    transition:0.3s;
+}
+
+.search-box input:focus{
+    box-shadow:0 0 15px cyan;
+    background:rgba(0,255,255,0.2);
+}
+
+.search-box input::placeholder{
+    color:rgba(255,255,255,0.5);
+}
+
+/* table of contents */
+.toc-container{
+    max-height:400px;
+    overflow-y:auto;
+}
+
+.toc-container::-webkit-scrollbar{
+    width:8px;
+}
+
+.toc-container::-webkit-scrollbar-track{
+    background:rgba(255,255,255,0.1);
+    border-radius:10px;
+}
+
+.toc-container::-webkit-scrollbar-thumb{
+    background:cyan;
+    border-radius:10px;
+}
+
+.toc-category{
+    margin-bottom:20px;
+}
+
+.toc-category-title{
+    color:cyan;
+    font-weight:bold;
+    font-size:16px;
+    margin-bottom:10px;
+    text-shadow:0 0 5px cyan;
+}
+
+.toc-item{
+    padding:10px;
+    margin:5px 0;
+    background:rgba(0,255,255,0.05);
+    border-left:3px solid cyan;
+    border-radius:5px;
+    cursor:pointer;
+    transition:0.3s;
+    font-size:14px;
+}
+
+.toc-item:hover{
+    background:rgba(0,255,255,0.15);
+    padding-left:15px;
+}
+
+.toc-item.hidden{
+    display:none;
+}
+
+/* support modal */
+.support-modal{
+    display:none;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.8);
+    z-index:3001;
+    justify-content:center;
+    align-items:center;
+}
+
+.support-modal.active{
+    display:flex;
+}
+
+.support-content{
+    background:rgba(30,30,50,0.95);
+    backdrop-filter:blur(15px);
+    border-radius:20px;
+    padding:30px;
+    width:85%;
+    max-width:450px;
+    border:2px solid cyan;
+    box-shadow:0 0 30px cyan;
+    color:white;
+    position:relative;
+}
+
+.support-content h3{
+    color:cyan;
+    margin-bottom:25px;
+    text-shadow:0 0 10px cyan;
+    font-size:24px;
+}
+
+.support-options{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+.support-btn{
+    padding:15px;
+    border:2px solid cyan;
+    background:rgba(0,255,255,0.1);
+    color:white;
+    border-radius:10px;
+    cursor:pointer;
+    font-size:16px;
+    font-weight:bold;
+    transition:0.3s;
+    text-align:left;
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.support-btn:hover{
+    background:rgba(0,255,255,0.25);
+    box-shadow:0 0 20px cyan;
+    transform:translateX(5px);
+}
+
+.close-support{
+    position:absolute;
+    top:15px;
+    right:20px;
+    color:cyan;
+    font-size:28px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+.close-support:hover{
+    text-shadow:0 0 10px cyan;
+}
+
+/* link input form */
+.link-form{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+.link-input{
+    width:100%;
+    padding:12px;
+    border:2px solid cyan;
+    background:rgba(0,255,255,0.1);
+    color:white;
+    border-radius:10px;
+    font-size:14px;
+    outline:none;
+    transition:0.3s;
+}
+
+.link-input:focus{
+    background:rgba(0,255,255,0.25);
+    box-shadow:0 0 15px cyan;
+}
+
+.link-input::placeholder{
+    color:rgba(255,255,255,0.5);
+}
+
+.submit-btn{
+    padding:12px;
+    background:linear-gradient(90deg, #00ffff, #0088ff);
+    color:#000;
+    border:none;
+    border-radius:10px;
+    font-weight:bold;
+    font-size:16px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.submit-btn:hover{
+    box-shadow:0 0 20px cyan;
+    transform:scale(1.05);
+}
+
+/* packages modal */
+.packages-modal{
+    display:none;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.8);
+    z-index:3002;
+    justify-content:center;
+    align-items:center;
+}
+
+.packages-modal.active{
+    display:flex;
+}
+
+.packages-content{
+    background:rgba(30,30,50,0.95);
+    backdrop-filter:blur(15px);
+    border-radius:20px;
+    padding:30px;
+    width:85%;
+    max-width:500px;
+    border:2px solid cyan;
+    box-shadow:0 0 30px cyan;
+    color:white;
+    position:relative;
+}
+
+.packages-content h3{
+    color:cyan;
+    margin-bottom:25px;
+    text-shadow:0 0 10px cyan;
+    font-size:24px;
+}
+
+.packages-grid{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+}
+
+.package-btn{
+    padding:15px;
+    border:2px solid cyan;
+    background:rgba(0,255,255,0.1);
+    color:white;
+    border-radius:10px;
+    cursor:pointer;
+    font-size:16px;
+    font-weight:bold;
+    transition:0.3s;
+    text-align:center;
+}
+
+.package-btn:hover{
+    background:rgba(0,255,255,0.25);
+    box-shadow:0 0 20px cyan;
+    transform:scale(1.05);
+}
+
+.close-packages{
+    position:absolute;
+    top:15px;
+    right:20px;
+    color:cyan;
+    font-size:28px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+.close-packages:hover{
+    text-shadow:0 0 10px cyan;
+}
+
+/* pricing modal */
+.pricing-modal{
+    display:none;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.8);
+    z-index:3003;
+    justify-content:center;
+    align-items:center;
+    overflow-y:auto;
+}
+
+.pricing-modal.active{
+    display:flex;
+}
+
+.pricing-content{
+    background:rgba(30,30,50,0.95);
+    backdrop-filter:blur(15px);
+    border-radius:20px;
+    padding:30px;
+    width:90%;
+    max-width:600px;
+    border:2px solid cyan;
+    box-shadow:0 0 30px cyan;
+    color:white;
+    position:relative;
+    margin:20px auto;
+}
+
+.pricing-content h3{
+    color:cyan;
+    margin-bottom:30px;
+    text-shadow:0 0 10px cyan;
+    font-size:28px;
+    text-align:center;
+}
+
+.platforms-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+}
+
+.platform-box{
+    border:2px solid cyan;
+    border-radius:15px;
+    padding:20px;
+    background:rgba(0,255,255,0.08);
+    text-align:center;
+}
+
+.platform-box h4{
+    color:cyan;
+    font-size:22px;
+    margin-bottom:15px;
+    text-shadow:0 0 5px cyan;
+}
+
+.price-item{
+    padding:12px;
+    margin:10px 0;
+    background:rgba(255,255,255,0.05);
+    border-left:3px solid cyan;
+    border-radius:8px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.price-item:hover{
+    background:rgba(0,255,255,0.15);
+    transform:translateX(5px);
+    box-shadow:0 0 15px cyan;
+}
+
+.price-label{
+    font-weight:bold;
+    font-size:14px;
+    margin-bottom:5px;
+}
+
+.price-value{
+    color:cyan;
+    font-size:18px;
+    font-weight:bold;
+    text-shadow:0 0 5px cyan;
+}
+
+/* slider styles */
+.slider-container{
+    margin-top:20px;
+}
+
+.slider-label{
+    font-weight:bold;
+    font-size:14px;
+    margin-bottom:10px;
+    color:cyan;
+    text-shadow:0 0 5px cyan;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.slider-value{
+    background:rgba(0,255,255,0.2);
+    padding:5px 10px;
+    border-radius:5px;
+    color:cyan;
+    font-weight:bold;
+}
+
+.quantity-input{
+    width:100%;
+    height:8px;
+    border-radius:5px;
+    background:rgba(0,255,255,0.2);
+    outline:none;
+    -webkit-appearance:none;
+    appearance:none;
+    background:linear-gradient(to right, #00ffff 0%, #0088ff 100%);
+}
+
+.quantity-input::-webkit-slider-thumb{
+    -webkit-appearance:none;
+    appearance:none;
+    width:25px;
+    height:25px;
+    border-radius:50%;
+    background:cyan;
+    cursor:pointer;
+    box-shadow:0 0 10px cyan;
+    transition:0.2s;
+}
+
+.quantity-input::-webkit-slider-thumb:hover{
+    transform:scale(1.2);
+    box-shadow:0 0 20px cyan;
+}
+
+.quantity-input::-moz-range-thumb{
+    width:25px;
+    height:25px;
+    border-radius:50%;
+    background:cyan;
+    cursor:pointer;
+    border:none;
+    box-shadow:0 0 10px cyan;
+    transition:0.2s;
+}
+
+.quantity-input::-moz-range-thumb:hover{
+    transform:scale(1.2);
+    box-shadow:0 0 20px cyan;
+}
+
+.price-display{
+    background:rgba(0,255,255,0.1);
+    padding:15px;
+    border-radius:10px;
+    margin-top:10px;
+    text-align:center;
+    border:2px solid cyan;
+}
+
+.price-display .total-price{
+    font-size:24px;
+    color:cyan;
+    font-weight:bold;
+    text-shadow:0 0 10px cyan;
+}
+
+.order-btn{
+    width:100%;
+    margin-top:15px;
+    padding:12px;
+    background:linear-gradient(90deg, #00ffff, #0088ff);
+    color:#000;
+    border:none;
+    border-radius:10px;
+    font-weight:bold;
+    font-size:16px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.order-btn:hover{
+    box-shadow:0 0 20px cyan;
+    transform:scale(1.05);
+}
+
+.close-pricing{
+    position:absolute;
+    top:15px;
+    right:20px;
+    color:cyan;
+    font-size:28px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+.close-pricing:hover{
+    text-shadow:0 0 10px cyan;
+}
 </style>
 </head>
 
@@ -247,14 +735,14 @@ canvas{
     <div class="card">
 
         <div class="avatar">
-            <img src="c:\Users\ASUS\OneDrive\Pictures\quan.jpg (2).jpg" alt="Avatar">
+            <img src="c:\Users\ASUS\OneDrive\Pictures\download (1).png" alt="Avatar">
         </div>
 
         <h2>𝑷𝒉𝒂𝒏 𝑻𝒓𝒐̣𝒏𝒈 𝑸𝒖𝒂̂𝒏</h2>
 
         <div class="neon">🍀 Quân Mầm Non 🍀</div>
 
-        <p style="margin-top:10px;">𝑿𝒊𝒏 𝑪𝒉𝒂̀𝒐 𝑨𝒏𝒉 𝑬𝒎
+        <p style="margin-top:10px;">Coming soon
 !</p>
 
         <!-- SOCIAL -->
@@ -264,7 +752,7 @@ canvas{
             <a href="https://www.instagram.com/trongquan1107?igsh=MXh4d2o4b241NHpmcw%3D%3D&utm_source=qr" target="_blank">📸 Instagram</a>
         </div>
 
-        <a class="btn" href="javascript:openSkills()">Kỹ Năng</a>
+        <a class="btn" href="javascript:openSkills()">⭐ Mục Lục ⭐</a>
     </div>
 </div>
 
@@ -272,47 +760,111 @@ canvas{
 <div class="skills-modal" id="skillsModal">
     <span class="close-skills" onclick="closeSkills()">&times;</span>
     <div class="skills-content">
-        <h3>Kỹ Năng Của Tôi</h3>
+        <h3>Tìm Kiếm
         
-        <div class="skill-item">
-            <div class="skill-name">
-                <span>HTML</span>
-                <span>12%</span>
-            </div>
-            <div class="skill-bar">
-                <div class="skill-progress" style="width:12%"></div>
-            </div>
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="🔍 Tìm kiếm ..." onkeyup="searchTOC()">
         </div>
 
-        <div class="skill-item">
-            <div class="skill-name">
-                <span>CSS</span>
-                <span>15%</span>
+        <div class="toc-container" id="tocContainer">
+            <!-- Web Development -->
+            <div class="toc-category">
+                <div class="toc-category-title">🌐Coming soon</div>
+                <div class="toc-item" data-category="web" data-keyword="html">📄 HTML - Cấu trúc trang web</div>
+                <div class="toc-item" data-category="web" data-keyword="css">🎨 CSS - Trang trí giao diện</div>
+                <div class="toc-item" data-category="web" data-keyword="javascript">⚙️ JavaScript - Tương tác động</div>
+                <div class="toc-item" data-category="web" data-keyword="responsive">📱 Responsive Design - Thiết kế linh hoạt</div>
             </div>
-            <div class="skill-bar">
-                <div class="skill-progress" style="width:15%"></div>
-            </div>
-        </div>
 
-        <div class="skill-item">
-            <div class="skill-name">
-                <span>JavaScript</span>
-                <span>8%</span>
+            <!-- Design -->
+            <div class="toc-category">
+                <div class="toc-category-title">Hỗ trợ mạng xã hội</div>
+                <div class="toc-item" data-category="design" data-keyword="ux">Tăng lượt tương tác👍</div>
+                <div class="toc-item" data-category="design" data-keyword="graphic">Bảo mật tải khoản cá nhân💂</div>
+                <div class="toc-item" data-category="design" data-keyword="color">Phục hồi tài khoản bị khóa❤️‍🩹</div>
             </div>
-            <div class="skill-bar">
-                <div class="skill-progress" style="width:8%"></div>
-            </div>
-        </div>
 
-        <div class="skill-item">
-            <div class="skill-name">
-                <span>Thiết Kế Web</span>
-                <span>11%</span>
-            </div>
-            <div class="skill-bar">
-                <div class="skill-progress" style="width:11%"></div>
+            <!-- Tools -->
+            <div class="toc-category">
+                <div class="toc-category-title">🛠️ Coming soon</div>
+                <div class="toc-item" data-category="tools" data-keyword="git">📦 Git & GitHub - Quản lý phiên bản</div>
+                <div class="toc-item" data-category="tools" data-keyword="vscode">💻 Visual Studio Code</div>
+                <div class="toc-item" data-category="tools" data-keyword="figma">🎪 Figma - Thiết kế UI</div>
+                <div class="toc-item" data-category="tools" data-keyword="npm">📚 NPM - Quản lý package</div>
             </div>
         </div>
+    </div>
+</div>
+
+<!-- SUPPORT MODAL - LINK INPUT -->
+<div class="support-modal" id="supportModal">
+    <div class="support-content">
+        <span class="close-support" onclick="closeSupport()">&times;</span>
+        <h3>👍 Tăng Lượt Tương Tác</h3>
+        
+        <div class="link-form">
+            <input type="url" id="userLink" class="link-input" placeholder="Điền link liên kết của bạn vào đây..." required>
+            <button class="submit-btn" onclick="submitLink()">Tiếp Tục →</button>
+        </div>
+    </div>
+</div>
+
+<!-- PACKAGES MODAL -->
+<div class="packages-modal" id="packagesModal">
+    <div class="packages-content">
+        <span class="close-packages" onclick="closePackages()">&times;</span>
+        <h3>🎁 Chọn Gói Dịch Vụ</h3>
+        
+        <div class="packages-grid">
+            <button class="package-btn" onclick="selectPackage('likes')">👍 Tăng Like</button>
+            <button class="package-btn" onclick="selectPackage('views')">👀 Tăng Lượt Xem</button>
+            <button class="package-btn" onclick="selectPackage('comments')">💬 Tăng Bình Luận</button>
+            <button class="package-btn" onclick="selectPackage('followers')">👥 Tăng Lượt Theo Dõi</button>
+        </div>
+    </div>
+</div>
+
+<!-- PRICING MODAL -->
+<div class="pricing-modal" id="pricingModal">
+    <div class="pricing-content">
+        <span class="close-pricing" onclick="closePricing()">&times;</span>
+        <h3 id="pricingTitle">📊 Bảng Giá</h3>
+        
+        <div class="platforms-grid">
+            <!-- TikTok -->
+            <div class="platform-box">
+                <h4>🎵 TikTok</h4>
+                <div class="slider-container">
+                    <div class="slider-label">
+                        <span>Số lượng:</span>
+                        <span class="slider-value" id="tiktokValue">1000</span>
+                    </div>
+                    <input type="range" id="tiktokSlider" class="quantity-input" min="100" max="10000" step="100" value="1000" oninput="updateTiktokPrice()">
+                    <div class="price-display">
+                        <div>Giá:</div>
+                        <div class="total-price" id="tiktokPrice">3,500đ</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Facebook -->
+            <div class="platform-box">
+                <h4>📘 Facebook</h4>
+                <div class="slider-container">
+                    <div class="slider-label">
+                        <span>Số lượng:</span>
+                        <span class="slider-value" id="facebookValue">1000</span>
+                    </div>
+                    <input type="range" id="facebookSlider" class="quantity-input" min="100" max="10000" step="100" value="1000" oninput="updateFacebookPrice()">
+                    <div class="price-display">
+                        <div>Giá:</div>
+                        <div class="total-price" id="facebookPrice">6,000đ</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <button class="order-btn" onclick="confirmSliderOrder()">✅ Đặt Hàng Ngay</button>
     </div>
 </div>
 
@@ -326,10 +878,267 @@ function closeSkills(){
     document.getElementById("skillsModal").classList.remove("active");
 }
 
+// ===== search TOC =====
+function searchTOC(){
+    const searchInput = document.getElementById("searchInput").value.toLowerCase();
+    const tocItems = document.querySelectorAll(".toc-item");
+    
+    tocItems.forEach(item => {
+        const text = item.textContent.toLowerCase();
+        const keyword = item.getAttribute("data-keyword").toLowerCase();
+        
+        if(text.includes(searchInput) || keyword.includes(searchInput)){
+            item.classList.remove("hidden");
+        } else {
+            item.classList.add("hidden");
+        }
+    });
+}
+
+// ===== click on TOC item =====
+document.addEventListener("DOMContentLoaded", function(){
+    const tocItems = document.querySelectorAll(".toc-item");
+    tocItems.forEach(item => {
+        item.addEventListener("click", function(){
+            const text = this.textContent.trim();
+            
+            // Kiểm tra nếu click vào "Tăng lượt tương tác"
+            if(text.includes("Tăng lượt tương tác")){
+                openSupport();
+            } else {
+                alert("📌 " + text);
+            }
+        });
+    });
+});
+
+// ===== support modal functions =====
+function openSupport(){
+    document.getElementById("supportModal").classList.add("active");
+    document.getElementById("userLink").value = "";
+}
+
+function closeSupport(){
+    document.getElementById("supportModal").classList.remove("active");
+}
+
+function submitLink(){
+    const link = document.getElementById("userLink").value.trim();
+    
+    if(!link){
+        alert("⚠️ Vui lòng nhập liên kết!");
+        return;
+    }
+    
+    // Lưu link vào sessionStorage để sử dụng sau
+    sessionStorage.setItem("userLink", link);
+    
+    // Đóng support modal và mở packages modal
+    closeSupport();
+    setTimeout(() => {
+        openPackages();
+    }, 300);
+}
+
+// ===== packages modal functions =====
+function openPackages(){
+    document.getElementById("packagesModal").classList.add("active");
+}
+
+function closePackages(){
+    document.getElementById("packagesModal").classList.remove("active");
+}
+
+function selectPackage(packageType){
+    const link = sessionStorage.getItem("userLink");
+    sessionStorage.setItem("selectedPackage", packageType);
+    showPricingForPackage(packageType);
+    closePackages();
+    setTimeout(() => {
+        openPricing();
+    }, 300);
+}
+
+// ===== pricing modal functions =====
+function openPricing(){
+    document.getElementById("pricingModal").classList.add("active");
+}
+
+function closePricing(){
+    document.getElementById("pricingModal").classList.remove("active");
+}
+
+// Bảng giá cho từng dịch vụ (VND)
+const pricingData = {
+    likes: {
+        title: "👍 Tăng Like",
+        tiktok: [
+            { amount: "100 like", price: "7,500đ" },
+            { amount: "500 like", price: "32,000đ" },
+            { amount: "1,000 like", price: "66,000đ" },
+            { amount: "5,000 like", price: "350,000đ" }
+        ],
+        facebook: [
+            { amount: "100 like", price: "12,000đ" },
+            { amount: "500 like", price: "50,000đ" },
+            { amount: "1,000 like", price: "90,000đ" },
+            { amount: "5,000 like", price: "400,000đ" }
+        ]
+    },
+    views: {
+        title: "👀 Tăng Lượt Xem",
+        tiktok: [
+            { amount: "1,000 views", price: "5,000đ" },
+            { amount: "5,000 views", price: "20,000đ" },
+            { amount: "10,000 views", price: "35,000đ" },
+            { amount: "50,000 views", price: "150,000đ" }
+        ],
+        facebook: [
+            { amount: "1,000 views", price: "8,000đ" },
+            { amount: "5,000 views", price: "35,000đ" },
+            { amount: "10,000 views", price: "60,000đ" },
+            { amount: "50,000 views", price: "250,000đ" }
+        ]
+    },
+    followers: {
+        title: "👥 Tăng Lượt Theo Dõi",
+        tiktok: [
+            { amount: "100 followers", price: "15,000đ" },
+            { amount: "500 followers", price: "60,000đ" },
+            { amount: "1,000 followers", price: "100,000đ" },
+            { amount: "5,000 followers", price: "450,000đ" }
+        ],
+        facebook: [
+            { amount: "100 followers", price: "18,000đ" },
+            { amount: "500 followers", price: "80,000đ" },
+            { amount: "1,000 followers", price: "140,000đ" },
+            { amount: "5,000 followers", price: "600,000đ" }
+        ]
+    }
+};
+
+// Bảng giá cơ bản (giá / 1000 đơn vị cho mỗi nền tảng)
+const priceRates = {
+    likes: {
+        tiktok: 10,      // 10đ per like
+        facebook: 12     // 12đ per like
+    },
+    views: {
+        tiktok: 5,       // 5đ per view
+        facebook: 8      // 8đ per view
+    },
+    followers: {
+        tiktok: 15,      // 15đ per follower
+        facebook: 18     // 18đ per follower
+    }
+};
+
+function showPricingForPackage(packageType){
+    const pricing = pricingData[packageType];
+    sessionStorage.setItem("currentPackageType", packageType);
+    
+    // Cập nhật tiêu đề
+    document.getElementById("pricingTitle").textContent = pricing.title;
+    
+    // Reset sliders nếu tồn tại
+    const tiktokSlider = document.getElementById("tiktokSlider");
+    const facebookSlider = document.getElementById("facebookSlider");
+    
+    if(tiktokSlider && facebookSlider){
+        tiktokSlider.value = 1000;
+        facebookSlider.value = 1000;
+        
+        updateTiktokPrice();
+        updateFacebookPrice();
+    }
+}
+
+function calculatePrice(quantity, platform, packageType){
+    if(!packageType || !priceRates[packageType]) return 0;
+    const rate = priceRates[packageType][platform];
+    return quantity * rate;
+}
+
+function formatPrice(price){
+    return price.toLocaleString('vi-VN') + "đ";
+}
+
+function updateTiktokPrice(){
+    const tiktokSlider = document.getElementById("tiktokSlider");
+    const tiktokValue = document.getElementById("tiktokValue");
+    const tiktokPrice = document.getElementById("tiktokPrice");
+    
+    if(!tiktokSlider || !tiktokValue || !tiktokPrice) return;
+    
+    const quantity = parseInt(tiktokSlider.value);
+    const packageType = sessionStorage.getItem("currentPackageType");
+    const price = calculatePrice(quantity, "tiktok", packageType);
+    
+    tiktokValue.textContent = quantity.toLocaleString('vi-VN');
+    tiktokPrice.textContent = formatPrice(price);
+    sessionStorage.setItem("tiktokQuantity", quantity);
+    sessionStorage.setItem("tiktokPrice", price);
+}
+
+function updateFacebookPrice(){
+    const facebookSlider = document.getElementById("facebookSlider");
+    const facebookValue = document.getElementById("facebookValue");
+    const facebookPrice = document.getElementById("facebookPrice");
+    
+    if(!facebookSlider || !facebookValue || !facebookPrice) return;
+    
+    const quantity = parseInt(facebookSlider.value);
+    const packageType = sessionStorage.getItem("currentPackageType");
+    const price = calculatePrice(quantity, "facebook", packageType);
+    
+    facebookValue.textContent = quantity.toLocaleString('vi-VN');
+    facebookPrice.textContent = formatPrice(price);
+    sessionStorage.setItem("facebookQuantity", quantity);
+    sessionStorage.setItem("facebookPrice", price);
+}
+
+function confirmSliderOrder(){
+    const link = sessionStorage.getItem("userLink");
+    const packageType = sessionStorage.getItem("currentPackageType");
+    const tiktokQty = sessionStorage.getItem("tiktokQuantity") || "0";
+    const tiktokPrice = sessionStorage.getItem("tiktokPrice") || "0";
+    const facebookQty = sessionStorage.getItem("facebookQuantity") || "0";
+    const facebookPrice = sessionStorage.getItem("facebookPrice") || "0";
+    
+    const packageNames = {
+        likes: "👍 Tăng Like",
+        views: "👀 Tăng Lượt Xem",
+        followers: "👥 Tăng Lượt Theo Dõi"
+    };
+    
+    const totalPrice = parseInt(tiktokPrice) + parseInt(facebookPrice);
+    
+    const message = `✅ Đơn hàng đã tạo\n\n📦 Dịch vụ: ${packageNames[packageType]}\n📌 Link: ${link}\n\n🎵 TikTok:\n  Số lượng: ${parseInt(tiktokQty).toLocaleString('vi-VN')}\n  Giá: ${formatPrice(parseInt(tiktokPrice))}\n\n📘 Facebook:\n  Số lượng: ${parseInt(facebookQty).toLocaleString('vi-VN')}\n  Giá: ${formatPrice(parseInt(facebookPrice))}\n\n💰 TỔNG CỘNG: ${formatPrice(totalPrice)}`;
+    
+    alert(message);
+    closePricing();
+}
+
 window.onclick = function(event){
-    const modal = document.getElementById("skillsModal");
-    if(event.target == modal){
-        modal.classList.remove("active");
+    const skillsModal = document.getElementById("skillsModal");
+    const supportModal = document.getElementById("supportModal");
+    const packagesModal = document.getElementById("packagesModal");
+    const pricingModal = document.getElementById("pricingModal");
+    
+    if(event.target == skillsModal){
+        skillsModal.classList.remove("active");
+    }
+    
+    if(event.target == supportModal){
+        supportModal.classList.remove("active");
+    }
+    
+    if(event.target == packagesModal){
+        packagesModal.classList.remove("active");
+    }
+    
+    if(event.target == pricingModal){
+        pricingModal.classList.remove("active");
     }
 }
 
